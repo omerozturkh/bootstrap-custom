@@ -1,4 +1,7 @@
 body {
-  background-color: #000;
+  background-color: #fff;
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center; }

@@ -18,26 +18,25 @@ gulp.task('css', function () {
     return gulp.src('assets/styles/sass/main.scss')
         .pipe(sass({ style: 'compressed' }))
         .pipe(autoprefix('last 15 version'))
-        .pipe(concat ('main.css'))
+        .pipe(concat('main.css'))
         .pipe(gulp.dest('assets/styles/css'))
         .pipe(connect.reload());
 });
 
 
 gulp.task('js', function () {
-    gulp.src(JSFiles)
+    gulp.src('assets/scripts/js/main.js')
         .pipe(uglify())
         .pipe(concat('all.js'))
-        .pipe(gulp.dest(JSDir))
+        .pipe(gulp.dest('assets/scripts/js'))
         .pipe(connect.reload());
 });
 
 
 gulp.task('watch', function () {
-    gulp.watch('assets/styles/scss/**/*.scss', ['css']);
-    //gulp.watch(JSFiles, ['js']);
+    gulp.watch('assets/styles/sass/**/*.scss', ['css']);
+    gulp.watch('assets/scripts/js/**/*.js', ['js']);
 });
 
 
-gulp.task('default', ['connect','css','watch']);
-gulp.run('default');
+gulp.task('default', ['connect','watch','css']);
