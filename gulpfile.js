@@ -1,10 +1,10 @@
 var gulp = require('gulp');
-
 var connect = require('gulp-connect');
 var uglify  = require('gulp-uglify');
 var concat  = require('gulp-concat');
 var sass = require('gulp-sass');
 var autoprefix = require('gulp-autoprefixer');
+var notify = require("gulp-notify");
 
 gulp.task ('connect',function(){
     connect.server({
@@ -14,9 +14,16 @@ gulp.task ('connect',function(){
     });
 });
 
+var config = {
+    bootstrapDir: './bower_components/bootstrap-sass',
+    publicDir: './public'
+};
+
 gulp.task('css', function () {
     return gulp.src('assets/styles/sass/main.scss')
-        .pipe(sass({ style: 'compressed' }))
+        .pipe(sass({
+            includePaths: [config.bootstrapDir + '/assets/stylesheets'],
+        }))
         .pipe(autoprefix('last 15 version'))
         .pipe(concat('main.css'))
         .pipe(gulp.dest('assets/styles/css'))

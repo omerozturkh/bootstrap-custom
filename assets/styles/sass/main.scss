@@ -1,5 +1,7 @@
 $white: #fff;
-
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/grid";
 body {
   background-color: #454543;
   color:$white;

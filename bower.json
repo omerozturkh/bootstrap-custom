@@ -1,0 +1,16 @@
+{
+  "name": "omer",
+  "description": "test",
+  "main": "gulpfile.js",
+  "authors": [
+    "Omer <omerozturkh@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/omerozturkh/test",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
